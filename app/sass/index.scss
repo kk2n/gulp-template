@@ -1,0 +1,99 @@
+@charset "UTF-8";
+//sass组件------------------------------
+@import 'd:/ws/ss/_sscss-set';
+@import 'd:/ws/ss/_sscss-mixin';
+
+
+/*index样式*/
+body {
+    @include ss(() (bgc #fff));
+}
+.page-size {
+  @include ss(() (who) (miw 320) (maw 414) (jz));
+}
+.waikuang{
+@include ss(()
+    (w 100%)
+    (ho)
+    (bg"bg.png")
+    (bgc #fff)
+    (bgs 100% 100%)
+);
+}
+$kuangh:640*0.55*430/640;
+$kuangh2:-($kuangh)-10;
+.waik-wai{
+
+   @include ss(()
+       (w 70%)
+       (h $kuangh)
+       (por)
+       (jz)
+       (mt 20%)
+       (bgc #E60012)
+       (bdrs 19)
+   );
+}
+.waik-wai-s{
+    @include ss(()
+        (w 66%)
+        (h $kuangh+20)
+        (por)
+        (jzc)
+        (mt $kuangh2)
+        (bgc #E60012)
+        (bdrs 12)
+        (bd 2px solid #fff)
+        (c #fff)
+        ( fz 26)
+        (fw 700)
+    );
+    & span{
+        @include ss(()
+            (fz 20)
+        );
+    }
+    & div{
+	    @include ss(()
+	            (pt 10) 
+	        );
+    }
+}
+.hb-jine{
+    @include ss(()
+        (fz 48)
+        (pt 60)
+        (fw 700)
+    );
+    &:before{
+        @include ss(()
+            (con '￥')
+            (fz 24)
+        );
+    }
+}
+.wei-tishi{
+    @include ss(()
+        (who)
+        (pt 1)
+        (c #000)
+        (fz 8)
+    );
+}
+$shuom-pp:0;
+.kuangwai-wen{
+    @include ss(()
+        (p $shuom-pp)
+        (who 90%)
+        (fz 24)
+        (c #E60012)
+        (jzc)
+        (lh 26px)
+        (fw 700)
+    );
+    & span{
+        @include ss(()
+            (fz 20) 
+        );
+    }
+}

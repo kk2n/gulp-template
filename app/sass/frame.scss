@@ -1,0 +1,63 @@
+@charset "UTF-8";
+//sass组件-----------------------------
+@import '/ws/ss/_sscss-set';
+@import '/ws/ss/_sscss-mixin';
+@import '/ws/ss/_sscss-reset';
+
+/*
+公共样式--------------------------------------------
+*/
+.btn-a,.btn-a:hover{@include ss(()(wh 80% 45px)(db)(bgc)(f 100)(lh 45px)(fz 18)(c #fff)(jzc)(bdrs 6));}
+/*
+框架---------------------------------------
+*/
+.waikuang{@include ss(()(who)(miw 320)(maw 414)(jz))}
+
+//foot样式-------------------------------------------------------------------------------------------------------
+.foot{
+    @include ss(()
+        (pof)
+        (b)
+        (w 100%)
+        (bgc)
+        (tac)
+        (z 1001)
+    );
+    & a{
+        @include ss(()
+            (fl)
+            (lhh 45px)
+            (c #333)
+            (td)
+            (fz 16)
+            ()
+        );
+        &.on_this{
+            @include ss(()
+                ( c #fff)
+            );
+        }
+    }
+}
+.foot-space{
+    @include ss(()
+        (hx 45)
+        (op 0)
+    );
+}
+
+//other样式------------------------------------------------------------------------------------------------------------
+//等高div
+.dg-kuang{@include ss(()(who 100% auto)(db));}
+.dg-kuang > div{@include ss(()(fl)(h)(w));&:before{@include ss(()(con "")(bg)(pt 32767)(mb -32767)(db));}}
+
+//logo样式
+.logo{@include ss(()
+    (who 150 26)
+    (bg "logo.png")
+    (bgs 100%)
+    (m 4px 0 0 4px)
+    (poa)
+    (z 100)
+);
+}

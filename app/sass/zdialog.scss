@@ -1,0 +1,47 @@
+@charset "UTF-8";
+//sass组件-----------------------------
+@import '/ws/ss/_sscss-set';
+@import '/ws/ss/_sscss-mixin';
+
+
+/*dialog组件样式*/
+.modal-dialog .modal-content {
+    & .modal-header{
+        & h1{
+            @include ss(()
+                (fz 18)
+                (ff $ff)
+            );
+        }
+    }
+    & .modal-body{
+        & .err_wen{
+            @include ss(()
+                (who)
+                (p 20 15)
+                );
+        }
+    }
+    .button-c{
+        @include ss(()
+            (wo 100%)
+            (h 45)
+            (jzc)
+            );
+        & span.button-qr{
+            @include ss(()
+                (wo 44%)
+                (di)
+                );
+        }
+        & span.button-qx{
+            @include ss(()
+                (wo 44%)
+                (ml 3%)
+                (di)
+                (c #f00)
+                (bgc #fff)(bd)
+            );
+        }
+    }
+}
