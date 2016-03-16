@@ -1,4 +1,4 @@
 function rr(){
-    $('body').css('background-color','#f7f7f7')
+    $('body').css('background-color','#f00')
 
 }

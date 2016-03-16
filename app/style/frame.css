@@ -1,0 +1,135 @@
+@charset "UTF-8";
+html {
+  font-family: "Microsoft Yahei", "Helvetica Neue", Helvetica, Tahoma, sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch; }
+
+body {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #313649;
+  background-color: #fff; }
+
+a {
+  background: transparent;
+  text-decoration: none;
+  color: #08c; }
+  a:active, a:hover {
+    outline: 0; }
+  a:hover {
+    color: #006699; }
+
+form, img, ul, ol, li, dl, dt, dd, form, td, th {
+  padding: 0;
+  margin: 0; }
+
+li {
+  list-style-type: none; }
+
+img {
+  vertical-align: middle;
+  border: none; }
+
+button,
+input,
+select,
+textarea {
+  font-family: "Microsoft Yahei", "Helvetica Neue", Helvetica, Tahoma, sans-serif;
+  color: inherit;
+  margin: 0;
+  -webkit-appearance: none; }
+
+input {
+  line-height: normal; }
+
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  cursor: pointer;
+  *overflow: visible; }
+
+button[disabled],
+html input[disabled] {
+  cursor: default; }
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0; }
+
+/*
+公共样式--------------------------------------------
+*/
+.btn-a, .btn-a:hover {
+  height:  45px;
+  width:  80%;
+  display: block;
+  background-color: #fff;
+  font: 100 14px normal;
+  line-height:  45px;
+  font-size:  18px;
+  color:  #fff;
+  margin-left: auto;margin-right:auto;text-align:center;
+  border-radius:  6px; }
+
+/*
+框架---------------------------------------
+*/
+.waikuang {
+  width: auto;height:auto;overflow:hidden;
+  min-width:  320px;
+  max-width:  414px;
+  margin-left: auto;margin-right:auto; }
+
+.foot {
+  position: fixed;
+  bottom: 0;
+  width:  100%;
+  background-color: #fff;
+  text-align: center;
+  z-index:  1001; }
+  .foot a {
+    float: left;
+    height: 45px;
+    line-height: 45px;
+    color:  #333;
+    text-decoration: none;
+    font-size:  16px; }
+    .foot a.on_this {
+      color:  #fff; }
+
+.foot-space {
+  height: 45px;width:100%;background-color:#e1e1e1;overflow:hidden; font:0/0 normal; clear:both; margin:0 auto;
+  opacity:  0; }
+
+.dg-kuang {
+  height:  auto;
+  overflow: hidden;
+  width:  100%;
+  display: block; }
+
+.dg-kuang > div {
+  float: left;
+  height: auto;
+  width: auto; }
+  .dg-kuang > div:before {
+    content: "";
+    background: inherit;
+    padding-top:  32767px;
+    margin-bottom:  -32767px;
+    display: block; }
+
+.logo {
+  height:  26px;
+  overflow: hidden;
+  width:  150px;
+  background: url("img/logo.png") 0 0 no-repeat;
+  background-size: 100%;
+  margin:  4px 0 0 4px;
+  position: absolute;
+  z-index:  100; }
