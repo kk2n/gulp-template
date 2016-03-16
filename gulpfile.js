@@ -182,7 +182,7 @@ gulp.task('min-js',['concat-js'], function () {
 //手动合并、压缩所有的JS,包括JS框架和自定义JS
 //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 gulp.task('js', ['min-jquery', 'min-js'], function () {//[为任务依赖，依赖的任务必须return]
-    gulp.src([Url.View.Js + '/' + JsFrame.OutFile.Min,Url.View.Js + '/' + JsPlugins.OutFile.Min]) // 匹配文件
+    return gulp.src([Url.View.Js + '/' + JsFrame.OutFile.Min,Url.View.Js + '/' + JsPlugins.OutFile.Min]) // 匹配文件
         .pipe(order([
             Url.View.Js + '/' + JsFrame.OutFile.Min,
             Url.View.Js + '/' + JsPlugins.OutFile.Min
@@ -206,7 +206,7 @@ gulp.task('watch-concat-js', function () {//[为任务依赖，依赖的任务�
 });
 //监控js变化
 gulp.task('watch-js', function () {
-    gulp.watch(JsPlugins.InFile, function () {
+    return gulp.watch(JsPlugins.InFile, function () {
         gulp.src(JsPlugins.InFile) // 匹配文件
             .pipe(plugins.concat(JsPlugins.OutFile.Concat, {newLine: '\n//注释：文件分割\n'}))//合并后的文件名
             .pipe(gulp.dest(Url.View.Js)) // 输出
@@ -217,12 +217,14 @@ gulp.task('watch-js', function () {
 });
 
 gulp.task('watch-script', function () {
-    gulp.watch(Url.View.Js + '/' + JsPlugins.OutFile.Min, ['watch-concat-js']);
+    return gulp.watch(Url.View.Js + '/' + JsPlugins.OutFile.Min, ['watch-concat-js']);
 });
 
 
 //监视所有的js
-gulp.task('watch-alljs', ['js','watch-js','watch-script']);
+gulp.task('watch-alljs', ['js'],function(){
+    gulp.run('watch-js','watch-script');
+});
 
 //+-----------------------------------+
 //以下编译和监控sass
@@ -271,7 +273,7 @@ gulp.task('min-html', function () {
 //  监视任务
 //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 gulp.task('watch-sass', function () {
-    gulp.watch(SassFile.InFile, function (event) {
+    return gulp.watch(SassFile.InFile, function (event) {
         var str = event.path;
         str = str.substring(str.lastIndexOf('\\') + 1);
         gulp.src(Url.App.Sass + '/' + str) // 匹配文件
@@ -302,7 +304,7 @@ gulp.task('concat-css',['sass'], function () {
 
 
 gulp.task('watch-css', function () {
-    gulp.watch(
+    return gulp.watch(
         [Url.App.Css + '/' + '*.css',
             '!' + Url.App.Css + '/' + '*.*.css',
             '!' + Url.App.Css + '/' + 'all.css',
@@ -311,7 +313,9 @@ gulp.task('watch-css', function () {
 });
 
 //监视所有的css
-gulp.task('watch-allcss', ['sass','watch-sass','watch-css']);
+gulp.task('watch-allcss', ['sass'],function(){
+    gulp.run('watch-sass','watch-css');
+});
 
 
 
